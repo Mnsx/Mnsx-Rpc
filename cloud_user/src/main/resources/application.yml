@@ -1,0 +1,6 @@
+server:
+  port: 8082
+
+mnsx:
+  rpc:
+    port: 6679
