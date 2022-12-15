@@ -13,14 +13,22 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Yaml" />
         <option value="AnnotationType" />
+        <option value="Yaml" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -51,6 +59,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
@@ -68,6 +77,7 @@
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="top.mnsx.service.impl" />
+      <recent name="top.mnsx.controller" />
       <recent name="top.mnsx.demo.service" />
       <recent name="serializer" />
     </key>
@@ -83,8 +93,9 @@
       <recent name="top.mnsx" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="top.mnsx.message" />
+      <recent name="top.mnsx.domain.entity" />
       <recent name="top.mnsx.service" />
+      <recent name="top.mnsx.message" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.UserApplication">
@@ -101,15 +112,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RpcClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="top.mnsx.client.RpcClient" />
-      <module name="Rpc-Demo" />
+    <configuration name="GoodApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="cloud_good" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="top.mnsx.client.*" />
+          <option name="PATTERN" value="top.mnsx.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="top.mnsx.GoodApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -155,11 +166,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.PayApplication" />
-        <item itemvalue="Spring Boot.OrderApplication" />
         <item itemvalue="Spring Boot.UserApplication" />
+        <item itemvalue="Spring Boot.OrderApplication" />
+        <item itemvalue="Spring Boot.GoodApplication" />
+        <item itemvalue="Spring Boot.PayApplication" />
         <item itemvalue="Application.ClassUtils" />
-        <item itemvalue="Application.RpcClient" />
       </list>
     </recent_temporary>
   </component>
@@ -178,7 +189,8 @@
       <workItem from="1669966768174" duration="108000" />
       <workItem from="1669991691274" duration="6646000" />
       <workItem from="1670030499487" duration="18000" />
-      <workItem from="1671012643962" duration="12998000" />
+      <workItem from="1671012643962" duration="15635000" />
+      <workItem from="1671087200548" duration="14848000" />
     </task>
     <servers />
   </component>
@@ -219,14 +231,9 @@
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Mnsx-Rpc/src/main/java/top/mnsx/protocol/MessageCodecSharable.java</url>
-          <line>36</line>
-          <option name="timeStamp" value="47" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Mnsx-Rpc/src/main/java/top/mnsx/protocol/MessageCodecSharable.java</url>
-          <line>48</line>
-          <option name="timeStamp" value="48" />
+          <url>file://$PROJECT_DIR$/Mnsx-Rpc/src/main/java/top/mnsx/handler/RpcRequestMessageHandler.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="49" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="io.netty.handler.codec.EncoderException" package="io.netty.handler.codec" />

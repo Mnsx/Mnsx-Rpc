@@ -9,8 +9,6 @@ import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
 import top.mnsx.message.RpcRequestMessage;
 import top.mnsx.message.RpcResponseMessage;
-import top.mnsx.service.ServiceFactory;
-
 import java.lang.reflect.Method;
 import java.util.Iterator;
 import java.util.Map;
@@ -35,6 +33,7 @@ public class RpcRequestMessageHandler extends SimpleChannelInboundHandler<RpcReq
                 service = iterator.next();
             }
             // 获取要调用方法
+            // TODO: 2022/12/15 空参没有办法解析 
             Method method = service.getClass().getMethod(msg.getMethodName(), msg.getParameterTypes());
             // 调用方法
             Object result = method.invoke(service, msg.getParameterValues());

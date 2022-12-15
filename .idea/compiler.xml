@@ -7,12 +7,15 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="cloud_pay" />
         <module name="cloud_user" />
         <module name="Mnsx-Rpc" />
         <module name="cloud_order" />
+        <module name="cloud_base" />
+        <module name="cloud_good" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="8" />
+    <bytecodeTargetLevel target="8">
+      <module name="cloud_pay" target="8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

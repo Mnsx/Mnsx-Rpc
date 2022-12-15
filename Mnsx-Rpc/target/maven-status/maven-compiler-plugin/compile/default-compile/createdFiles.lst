@@ -1,3 +1,7 @@
+top\mnsx\serializer\Serializer.class
+top\mnsx\message\RpcResponseMessage.class
+top\mnsx\serializer\SerializerAlgorithm.class
+top\mnsx\config\ClassArrayDeserializer.class
 top\mnsx\message\RpcRequestMessage.class
 top\mnsx\client\RpcClient$1.class
 top\mnsx\config\ClassDeserializer.class
@@ -9,12 +13,8 @@ top\mnsx\message\Message.class
 top\mnsx\client\RpcClient.class
 top\mnsx\config\Config.class
 top\mnsx\generator\SequenceIdGenerator.class
-top\mnsx\serializer\Serializer.class
 top\mnsx\service\ServiceFactory.class
 top\mnsx\handler\RpcRequestMessageHandler.class
 top\mnsx\server\RpcServer$1.class
 top\mnsx\serializer\SerializerAlgorithm$2.class
-top\mnsx\message\RpcResponseMessage.class
-top\mnsx\serializer\SerializerAlgorithm.class
-top\mnsx\config\ClassArrayDeserializer.class
 top\mnsx\protocol\ProtocolFrameDecoder.class

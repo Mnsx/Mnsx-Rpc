@@ -10,7 +10,8 @@
     <modules>
         <module>cloud_user</module>
         <module>cloud_order</module>
-        <module>cloud_pay</module>
+        <module>cloud_good</module>
+        <module>cloud_base</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -28,6 +29,24 @@
                 <version>2.5.0</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            <!-- MyBatis-Plus -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>3.4.3</version>
+            </dependency>
+            <!-- lombok -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.24</version>
+            </dependency>
+            <!-- mysql -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>8.0.30</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
