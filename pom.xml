@@ -10,6 +10,7 @@
     <modules>
         <module>cloud_user</module>
         <module>cloud_order</module>
+        <module>cloud_pay</module>
     </modules>
     <packaging>pom</packaging>
 

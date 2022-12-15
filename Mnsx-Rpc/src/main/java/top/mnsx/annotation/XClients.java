@@ -12,6 +12,5 @@ import java.lang.annotation.*;
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface XClients {
-    String host();
-    int port();
+    String value();
 }

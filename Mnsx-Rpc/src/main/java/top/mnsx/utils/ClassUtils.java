@@ -17,18 +17,15 @@ public class ClassUtils {
         String packageDir = packageName.replace('.', '/');
         List<Class<?>> fileNames = new ArrayList<>();
         try {
-            Enumeration<URL> resource = Thread.currentThread().getContextClassLoader().getResources(packageDir);
-            while (resource.hasMoreElements()) {
-                URL url = resource.nextElement();
-                String protocol = url.getProtocol();
-                if ("file".equals(protocol)) {
-                    String path = URLDecoder.decode(url.getFile(), "UTF-8");
-                    File file = new File(path);
-                    walkFile(file, fileNames, packageName);
-                }
+            URL url = Thread.currentThread().getContextClassLoader().getResource(packageDir);
+            if (url != null) {
+                File file = new File(url.toString().replace("file:/", ""));
+                walkFile(file, fileNames, packageName);
+            } else {
+                throw new RuntimeException("无法找到指定路径");
             }
             return fileNames;
-        } catch (IOException | ClassNotFoundException e) {
+        } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
 
@@ -36,15 +33,23 @@ public class ClassUtils {
         return null;
     }
 
-    // TODO: 2022/12/2  可以多级获取类
     private static void walkFile(File file, List<Class<?>> fileNames, String packageName) throws ClassNotFoundException {
         File[] files = file.listFiles();
         for (File f : files) {
             if (f.isDirectory()) {
                 walkFile(f, fileNames, packageName);
             } else {
-                fileNames.add(Thread.currentThread().getContextClassLoader().loadClass(packageName + "." + f.getName().substring(0, f.getName().length() - 6)));
+                fileNames.add(Thread.currentThread().getContextClassLoader().loadClass(handlerPath(f.getPath())));
             }
         }
+    }
+
+    private static String handlerPath(String path) {
+        int index = path.indexOf("classes" + File.separator);
+        // 去除开头的classes+File.separator，去除结尾的.class
+        path = path.substring(index + 8, path.length() - 6);
+        // 将文件路径转换为包路径
+        path = path.replace(File.separator, ".");
+        return path;
     }
 }

@@ -19,6 +19,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -55,7 +58,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Mnsx-Blog/Mnsx-Blog-Backend" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/cloud_pay/src/main/resources" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -69,13 +72,18 @@
       <recent name="serializer" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\WorkSpace\Rpc-Demo\cloud_pay\src\main\resources" />
       <recent name="D:\WorkSpace\Rpc-Demo\cloud_user\src\main\resources" />
       <recent name="D:\WorkSpace\Rpc-Demo\Mnsx-Rpc" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\WorkSpace\Rpc-Demo\Mnsx-Rpc" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="top.mnsx" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="top.mnsx.message" />
       <recent name="top.mnsx.service" />
     </key>
   </component>
@@ -106,19 +114,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RpcServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="top.mnsx.server.RpcServer" />
-      <module name="Rpc-Demo" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="top.mnsx.server.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="OrderApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="cloud_order" />
       <extension name="coverage">
@@ -128,6 +123,19 @@
         </pattern>
       </extension>
       <option name="SPRING_BOOT_MAIN_CLASS" value="top.mnsx.OrderApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="cloud_pay" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="top.mnsx.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="top.mnsx.PayApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -147,11 +155,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.UserApplication" />
+        <item itemvalue="Spring Boot.PayApplication" />
         <item itemvalue="Spring Boot.OrderApplication" />
+        <item itemvalue="Spring Boot.UserApplication" />
         <item itemvalue="Application.ClassUtils" />
         <item itemvalue="Application.RpcClient" />
-        <item itemvalue="Application.RpcServer" />
       </list>
     </recent_temporary>
   </component>
@@ -170,6 +178,7 @@
       <workItem from="1669966768174" duration="108000" />
       <workItem from="1669991691274" duration="6646000" />
       <workItem from="1670030499487" duration="18000" />
+      <workItem from="1671012643962" duration="12998000" />
     </task>
     <servers />
   </component>
@@ -210,9 +219,14 @@
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Mnsx-Rpc/src/main/java/top/mnsx/handler/RpcRequestMessageHandler.java</url>
-          <line>53</line>
-          <option name="timeStamp" value="39" />
+          <url>file://$PROJECT_DIR$/Mnsx-Rpc/src/main/java/top/mnsx/protocol/MessageCodecSharable.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="47" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Mnsx-Rpc/src/main/java/top/mnsx/protocol/MessageCodecSharable.java</url>
+          <line>48</line>
+          <option name="timeStamp" value="48" />
         </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="io.netty.handler.codec.EncoderException" package="io.netty.handler.codec" />

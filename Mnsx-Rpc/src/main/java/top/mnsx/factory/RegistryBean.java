@@ -23,28 +23,24 @@ import java.util.stream.Collectors;
  */
 @Component
 public class RegistryBean implements BeanDefinitionRegistryPostProcessor {
-    private String host;
-    private int port;
-
     @Override
     public void postProcessBeanDefinitionRegistry(BeanDefinitionRegistry registry) throws BeansException {
         // TODO: 2022/12/2  动态获取package
-        List<Class<?>> classesByPackage = ClassUtils.getClassesByPackage("top.mnsx.service");
+        List<Class<?>> classesByPackage = ClassUtils.getClassesByPackage("top.mnsx");
         if (classesByPackage != null) {
             classesByPackage = classesByPackage.stream()
                     .filter(c -> c.isAnnotationPresent(XClients.class))
-                    .peek(c -> {
-                        XClients annotation = c.getAnnotation(XClients.class);
-                        this.host = annotation.host();
-                        this.port = annotation.port();
-                    })
                     .collect(Collectors.toList());
             ScheduledExecutorService executor = Executors.newSingleThreadScheduledExecutor();
             List<Class<?>> finalClassesByPackage = classesByPackage;
             // TODO: 2022/12/3 优化，浪费cpu 
             executor.scheduleWithFixedDelay(() -> {
                 for (Class<?> cls : finalClassesByPackage) {
-                    System.out.println("成功");
+                    XClients annotation = cls.getAnnotation(XClients.class);
+                    String value = annotation.value();
+                    String[] url = value.split(":");
+                    String host = url[0];
+                    int port = Integer.parseInt(url[1]);
                     BeanDefinitionBuilder builder = BeanDefinitionBuilder.genericBeanDefinition(cls);
                     GenericBeanDefinition definition = (GenericBeanDefinition) builder.getRawBeanDefinition();
                     definition.getPropertyValues().add("interfaceClass", definition.getBeanClassName());

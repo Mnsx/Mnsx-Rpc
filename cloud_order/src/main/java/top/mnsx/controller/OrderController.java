@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import top.mnsx.service.PayService;
 import top.mnsx.service.UserService;
 
 import javax.annotation.Resource;
@@ -17,9 +18,11 @@ import javax.annotation.Resource;
 public class OrderController {
     @Autowired
     private UserService userService;
+    @Autowired
+    private PayService payService;
 
     @GetMapping("/{name}")
     public String sayHello(@PathVariable("name") String name) {
-        return userService.sayHello(name);
+        return userService.sayHello(name) + "\n" + payService.pay(name);
     }
 }

@@ -1,5 +1,10 @@
 package top.mnsx.server;
 
+import io.netty.channel.ChannelDuplexHandler;
+import io.netty.channel.ChannelHandlerContext;
+import io.netty.handler.timeout.IdleState;
+import io.netty.handler.timeout.IdleStateEvent;
+import io.netty.handler.timeout.IdleStateHandler;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -55,6 +60,16 @@ public class RpcServer implements CommandLineRunner {
                             ch.pipeline().addLast(LOGGING_HANDLER);
                             ch.pipeline().addLast(MESSAGE_CODEC);
                             ch.pipeline().addLast(RPC_REQUEST_HANDLER);
+                            ch.pipeline().addLast(new IdleStateHandler(5, 0, 0));
+                            ch.pipeline().addLast(new ChannelDuplexHandler() {
+                                @Override
+                                public void userEventTriggered(ChannelHandlerContext ctx, Object evt) throws Exception {
+                                    IdleStateEvent event = (IdleStateEvent) evt;
+                                    if (event.state() == IdleState.READER_IDLE) {
+                                        ctx.channel().close();
+                                    }
+                                }
+                            });
                         }
                     })
                     .bind(properties.getPort())
